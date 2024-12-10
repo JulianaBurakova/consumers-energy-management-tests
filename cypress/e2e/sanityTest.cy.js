@@ -8,6 +8,7 @@ describe("Sanity Test", () => {
       url: "/about-us",
       h1: "About Consumers Energy Management Inc.",
     },
+    
     { name: "Products", url: "/products", h1: "Products" },
     { name: "Services", url: "/services", h1: "Services" },
     { name: "Tools", url: "/tools", h1: "Tools & Resources" },
