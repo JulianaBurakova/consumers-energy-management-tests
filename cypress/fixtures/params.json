@@ -9,5 +9,29 @@
     "Quebec",
     "Saskatechewan",
     "Northwest Territory"
+  ],
+  "heatingTypes": ["Natural Gas", "Propane", "Oil", "Electric", "Heat Pump"],
+  "testData": {
+    "gasTherm": 1.2,
+    "propaneGal": 4.0,
+    "oilGal": 4.25,
+    "summerKwh": 0.14,
+    "winterKwh": 0.1
+  },
+  "menuOptions": [
+    { "name": "Home", "url": "/", "h1": "Heating and Cooling " },
+    {
+      "name": "About",
+      "url": "/about-us",
+      "h1": "About Consumers Energy Management Inc."
+    },
+    { "name": "Products", "url": "/products", "h1": "Products" },
+    { "name": "Services", "url": "/services", "h1": "Services" },
+    { "name": "Tools", "url": "/tools", "h1": "Tools & Resources" },
+    { "name": "Promotions", "url": "/promotions", "h1": "Promotions" },
+    { "name": "Careers", "url": "/careers", "h1": "Careers" },
+    { "name": "Blog", "url": "/blog", "h1": "Blog" },
+    { "name": "FAQs", "url": "/faq", "h1": "Frequently Asked Questions" },
+    { "name": "Contact", "url": "/contact-us", "h1": "Contact Us" }
   ]
 }

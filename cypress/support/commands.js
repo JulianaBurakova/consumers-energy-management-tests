@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// cypress/support/commands.js
+import { selectors } from "../support/selectors";
+
+Cypress.Commands.add("clearAndType", (selector, value) => {
+  cy.get(selector).clear().type(`${value}{enter}`);
+});
+
+Cypress.Commands.add("selectAndVerify", (selector, value) => {
+  cy.get(selector).select(value).should("contain", value);
+});

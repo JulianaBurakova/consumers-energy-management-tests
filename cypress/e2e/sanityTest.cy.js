@@ -1,35 +1,18 @@
 /// <reference types="cypress" />
 
+import { selectors } from "../support/selectors";
 describe("Sanity Test", () => {
-  const menuOptions = [
-    { name: "Home", url: "/", h1: "Heating and Cooling " },
-    {
-      name: "About",
-      url: "/about-us",
-      h1: "About Consumers Energy Management Inc.",
-    },
-    { name: "Products", url: "/products", h1: "Products" },
-    { name: "Services", url: "/services", h1: "Services" },
-    { name: "Tools", url: "/tools", h1: "Tools & Resources" },
-    { name: "Promotions", url: "/promotions", h1: "Promotions" },
-    { name: "Careers", url: "/careers", h1: "Careers" },
-    { name: "Blog", url: "/blog", h1: "Blog" },
-    { name: "FAQs", url: "/faq", h1: "Frequently Asked Questions" },
-    { name: "Contact", url: "/contact-us", h1: "Contact Us" },
-  ];
   beforeEach(() => {
     cy.visit("/");
+    cy.fixture("params").as("data");
   });
-
-  menuOptions.forEach((option) => {
-    it(`Verify ${option.name} menu option`, () => {
+  it("Verify all menu options", function () {
+    this.data.menuOptions.forEach((option) => {
       cy.contains(option.name).click();
       cy.url().should("include", option.url);
-      if (option.h1) {
-        cy.get("h1").should("contain", option.h1);
-      } else {
-        cy.get("h1").should("contain", option.name);
-      }
+      const expectedH1 = option.h1 || option.name;
+      cy.get("h1").should("contain", expectedH1);
+      cy.visit("/");
     });
   });
 });
